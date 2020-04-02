@@ -1,0 +1,43 @@
+@mixin breakpoint($point) {
+  @if $point == tablet {
+    @media (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $point == phone {
+    @media (max-width: $breakpoint-phone) {
+      @content;
+    }
+  } @else if $point == big-desktop {
+    @media (min-width: $breakpoint-big-desktop) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $point) {
+      @content;
+    }
+  }
+}
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+@mixin shadow {
+  box-shadow: 0 1rem 2rem rgba($black, .2);
+}
+@mixin border-radius-small {
+  border-radius: 3px;
+}
+@mixin background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
